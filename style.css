@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+:root {
+  --bg: #f9f8f8;
+  --border-color: rgb(202, 202, 202);
+  --navbar-bg: #2c4147;
+  --teal: #00c98e;
+  --odd-row-bg: #f3f3f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+div {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  font-size: 16px;
+}
+
+/**********************
+      UTILITY
+***********************/
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  background: var(--navbar-bg);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  padding: 8px 30px;
+  cursor: pointer;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+/**********************
+          MAIN
+***********************/
+nav {
+  width: 100%;
+  height: 100px;
+  background: var(--navbar-bg);
+  margin-bottom: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 120px;
+}
+main {
+  padding: 0 120px;
+}
+.card {
+  padding: 30px 35px;
+  border: solid 1px var(--border-color);
+  margin: 20px 0;
+  background: white;
+}
+.title {
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--navbar-bg);
+}
+
+/**********************
+      STUDENT
+***********************/
+.student {
+  background: white;
+}
+.student .info {
+  flex: 1.5;
+  justify-content: space-between;
+}
+.student .info p {
+  font-size: 18px;
+}
+.student .info p.item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+}
+.student .info p span.label {
+  font-weight: 700;
+}
+.student .image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.student .image img {
+  width: 270px;
+  height: 270px;
+  border: solid 2px var(--navbar-bg);
+}
+
+/**********************
+      OPTIONS
+***********************/
+.options .row {
+  justify-content: space-between;
+  align-items: center;
+}
+.options .semester-dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/**********************
+        DROPDOWN
+***********************/
+.dropdown {
+  position: relative;
+  width: 270px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px var(--border-color);
+  margin-top: 10px;
+}
+.dropdown-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+.dropdown-button span {
+  font-size: 16px;
+  font-weight: normal;
+}
+.dropdown-button span.dropdown-icon {
+  transition: all 0.2s ease-in-out;
+  transform: rotateX(180deg) rotateY(180deg);
+}
+.closed .dropdown-button span {
+  transform: rotateX(0deg);
+  color: black;
+}
+.dropdown-menu {
+  position: absolute;
+  display: block;
+  width: 270px;
+  background: white;
+  transition: height 0.2s ease-in-out;
+  list-style-type: none;
+  top: 100%;
+  left: -1px;
+  padding: 0;
+  margin: 0;
+  height: 93px;
+  border: solid 1px rgb(222, 222, 222);
+}
+.dropdown-menu li {
+  transition: all 0.2s ease-in-out;
+  padding: 5px 10px;
+}
+.dropdown-menu li:hover {
+  background: var(--teal);
+  color: white;
+}
+.dropdown.closed .dropdown-menu {
+  height: 0;
+  border: none;
+  display: none;
+}
+
+/**********************
+      REPORT CARD
+***********************/
+table {
+  font-family: "DM Sans", sans-serif;
+  width: 100%;
+  border-spacing: 0px;
+  background: white;
+}
+table thead {
+  background: var(--teal);
+  color: white;
+}
+table td {
+  padding: 12px 16px;
+}
+table tr:not(:last-child) {
+  border-bottom: solid 1px #d1d0d0;
+}
+table tr.odd {
+  background: var(--odd-row-bg);
+}
+table tbody td:not(:last-of-type) {
+  border-right: solid 1px #d1d0d0;
+}
+
+.report-card {
+  padding: 0;
+}
+.report-card table thead tr td:not(:last-of-type) {
+  border-right: solid 1px var(--bg);
+}
+.report-card .table-header {
+  background: var(--teal);
+  color: white;
+}
+.report-card .table-header h4 {
+  border-right: solid 1px white;
+  padding: 0.5rem;
+}
+.report-card .table-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: solid 1px #d1d0d0;
+}
+.report-card .table-row.odd {
+  background: var(--odd-row-bg);
+}
+.report-card .table-row h4 {
+  padding: 10px 16px;
+  flex: 1;
+  border-right: solid 1px #d1d0d0;
+  font-weight: 400;
+}
+.report-card .table-row h4.code-col {
+  flex: 0.75;
+}
+.report-card .table-row h4.name-col {
+  flex: 2.5;
+}
+.report-card .table-row h4.lett-col {
+  flex: 0.5;
+}
+.report-card .table-row h4.pts-col {
+  flex: 0.5;
+}
