@@ -64,7 +64,7 @@ const studentAdvisorEl = document.querySelector("#student-advisor")
 const studentMajorEl = document.querySelector("#student-major")
 const studentGradeLevelEl = document.querySelector("#student-grade-level")
 const studentGradYearEl = document.querySelector("#student-graduation-year")
-const studentImageEl = document.querySelector("#student-image")
+const studentImageEl = document.querySelector("#image")
 const dropdownEl = document.querySelector(".dropdown")
 const dropdownButtonEl = document.querySelector(".dropdown-button")
 const dropdownLabelEl = document.querySelector(".dropdown-label")
@@ -181,12 +181,12 @@ function addReportCardHeaders(reportCardTableElement) {
 function addCourseRowToReportCard(reportCardTableElement, course, rowNum) {
   // update the code here with information about the course passed to this function
   reportCardTableElement.innerHTML += `
-  <div class="table-row course-row row-${rowNum + 1} ${rowNum % 2 === 1 ? "odd" : "even"}">
-    <h4 class="code-col">${course.code}</h4>
-    <h4 class="name-col">${course.name}</h4>
-    <h4 class="sem-col">${course.semester}</h4>
-    <h4 class="cred-col"><span class="credit">${course.credits}</span> credits</h4>
-    <h4 class="lett-col gpa">${course.grade}</h4>
+  <div class="table-row">
+    <h4 class="code-col">${code-col}</h4>
+    <h4 class="name-col">${name-col}</h4>
+    <h4 class="sem-col">${sem-col}</h4>
+    <h4 class="cred-col"><span class="credit">${cred-col}</span> credits</h4>
+    <h4 class="lett-col gpa">${lett-col}</h4>
     <h4 id="gpa-${rowNum + 1}" class="pts-col">?</h4>
   </div>
   `
@@ -240,12 +240,11 @@ function updateReportCard(reportCardTableElement, currentSemester) {
   // create and insert new HTML
   addReportCardHeaders(reportCardTableElement)
   const courses = studentData[currentSemester]
-  courses.forEach((course, i) => addCourseRowToReportCard(reportCardTableElement, course, i))
+  courses.forEach((course) => addCourseRowToReportCard(reportCardTableElement, course, i))
   addTotalsRow(reportCardTableElement)
   addGpaRow(reportCardTableElement)
   // handle any additional calculations
   addUpStudentCredits(reportCardTableElement)
-  calculateSemesterGpa(reportCardTableElement)
 }
 
 /**
@@ -351,24 +350,7 @@ function addUpStudentCredits(reportCardTableElement) {
 function calculateSemesterGpa(reportCardTableElement) {
   // code goes here
   const gpaElements = reportCardTableElement.querySelectorAll(".gpa")
-  let totalCourses = 0
-  let totalGpaPoints = 0
-
-  gpaElements.forEach((el, i) => {
-    const grade = el.innerHTML
-    const points = gpaPointsLookup[grade]
-    if (points) {
-      totalCourses += 1
-      totalGpaPoints += points
-      const gpaElement = reportCardTableElement.querySelector(`#gpa-${i + 1}`)
-      if (gpaElement) gpaElement.innerHTML = points
-    }
-  })
-
-  const totalPtsElement = reportCardTableElement.querySelector("#total-pts")
-  if (totalPtsElement) totalPtsElement.innerHTML = totalGpaPoints
-  const cumulativeGpaElement = reportCardTableElement.querySelector("#gpa")
-  if (cumulativeGpaElement) cumulativeGpaElement.innerHTML = Number(totalGpaPoints / totalCourses).toFixed(2)
+  
 }
 
 window.onload = function () {
