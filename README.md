@@ -6,7 +6,7 @@ Checkout branch `bug_1`
 <br>
 <b>Bug</b>: Report card is not displaying the student image
 <br>
-<b>Solution</b>: The JS selector is not picking up the correct HTML element. Update line 67 to select the `img` element, not the container `div`.
+<b>Solution</b>: The JS selector is not picking up the correct HTML element. Update line 67 to select the `img` element, not the container `div`
 
 ## Bug #2
 Checkout branch `bug_2`
