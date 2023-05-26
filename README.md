@@ -1,8 +1,5 @@
 # Report Card Generator Lab - Simple Bugs
 
-## Getting Started
-Checkout the `simple_bugs_only` branch
-
 ## Bug #1
 <b>Bug</b>: Report card is not displaying the student image
 <br>
