@@ -1,18 +1,21 @@
-# Report Card Generator Lab
+# Report Card Generator Lab - Simple Bugs
 
-Your college has realized their report card generating system is broken! They've reached out to you to see if you'd be willing to help them fix it.
+## Bug #1
+Checkout branch `bug_1`
+Bug: Report card is not displaying the student image
+Solution: The JS selector is not picking up the correct HTML element (update line 67 to select the `img` element, not the container `div`)
 
-At the moment, they have the styling and general layout done, but they're missing valid JavaScript. Your job is to modify the `script.js` file with code that produces a working report card generator. They've sent over your grades for the year to use as a model.
+## Bug #2
+Checkout branch `bug_2`
+Bug: Report card doesn't load properly; the console reads `Uncaught ReferenceError: i is not defined`
+Solution: (line 243) Update the forEach to include the argument `i` (index)
 
-## ✅ Application Features
+## Bug #3
+Checkout branch `bug_3`
+Bug: Report card doesn't load properly; the console reads `Uncaught ReferenceError: code is not defined`
+Solution: Update the template literals in the `addCourseRowToReportCard()` function (update from class names to expressions)
 
-### Core Features
-
-- [ ] Report card displays student information: name, grade, advisor, major, graduation year, and image
-- [ ] Grade dynamically changes and shows **at least 3** semester options (fall, winter, and spring)
-- [ ] Each semester displays the corresponding class, including class code, class name, semester, credits, and letter grade
-
-### Stretch Features
-
-- [ ] Report card calculates GPA automatically
-- [ ] Users can change their grades after the initial report card is generated
+## Bug #4
+Checkout branch `bug_4`
+Bug: Student needs help implementing the stretch feature
+Solution: Refer to exemplar code if needed
