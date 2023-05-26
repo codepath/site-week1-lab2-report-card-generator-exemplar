@@ -1,21 +1,21 @@
 # Report Card Generator Lab - Simple Bugs
 
 ## Bug #1
-Checkout branch `bug_1`
-Bug: Report card is not displaying the student image
+Checkout branch `bug_1`<br>
+Bug: Report card is not displaying the student image<br>
 Solution: The JS selector is not picking up the correct HTML element (update line 67 to select the `img` element, not the container `div`)
 
 ## Bug #2
-Checkout branch `bug_2`
-Bug: Report card doesn't load properly; the console reads `Uncaught ReferenceError: i is not defined`
+Checkout branch `bug_2`<br>
+Bug: Report card doesn't load properly; the console reads `Uncaught ReferenceError: i is not defined`<br>
 Solution: (line 243) Update the forEach to include the argument `i` (index)
 
 ## Bug #3
-Checkout branch `bug_3`
-Bug: Report card doesn't load properly; the console reads `Uncaught ReferenceError: code is not defined`
+Checkout branch `bug_3`<br>
+Bug: Report card doesn't load properly; the console reads `Uncaught ReferenceError: code is not defined`<br>
 Solution: Update the template literals in the `addCourseRowToReportCard()` function (update from class names to expressions)
 
 ## Bug #4
-Checkout branch `bug_4`
-Bug: Student needs help implementing the stretch feature
+Checkout branch `bug_4`<br>
+Bug: Student needs help implementing the stretch feature<br>
 Solution: Refer to exemplar code if needed
