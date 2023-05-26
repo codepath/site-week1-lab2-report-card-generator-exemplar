@@ -1,12 +1,11 @@
 # Report Card Generator Lab - Simple Bugs
 
 ## Bug #1
-Checkout branch `bug_1`
+BUG: Report card is not displaying the student image
 <br>
-<br>
-<b>Bug</b>: Report card is not displaying the student image
-<br>
-<b>Solution</b>: The JS selector is not picking up the correct HTML element. Update line 67 to select the `img` element, not the container `div`
+<details><summary>SOLUTION</summary>
+<p>The JS selector is not picking up the correct HTML element. Update line 67 to select the `img` element, not the container `div`</p>
+</details>
 
 ## Bug #2
 Checkout branch `bug_2`
